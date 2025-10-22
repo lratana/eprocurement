@@ -10,10 +10,10 @@ const authMiddleware = require('../middleware/auth');
 
 // Simple test route
 router.get('/test-simple', (req, res) => {
-  res.json({
-    status: 'success',
-    message: 'Auth routes are working!'
-  });
+    res.json({
+        status: 'success',
+        message: 'Auth routes are working!'
+    });
 });
 
 // User Registration
@@ -32,14 +32,14 @@ router.put('/profile', authMiddleware, userController.updateProfile);
 
 // 📋 Test route to check if authentication is working
 router.get('/test', authMiddleware, (req, res) => {
-  res.json({
-    status: 'success',
-    message: 'Authentication is working!',
-    user: {
-      id: req.user.userId,
-      email: req.user.email
-    }
-  });
+    res.json({
+        status: 'success',
+        message: 'Authentication is working!',
+        user: {
+            id: req.user.userId,
+            email: req.user.email
+        }
+    });
 });
 
 module.exports = router;

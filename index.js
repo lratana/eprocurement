@@ -22,7 +22,7 @@ app.use('/api/auth', authRoutes);
 
 // Step 6: Create a simple homepage route
 app.get('/', (req, res) => {
-  res.send(`
+    res.send(`
     <h1>🚀 Welcome to EProcurement!</h1>
     <p>Your procurement system is running successfully.</p>
     
@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 
 // Step 7: Create an about page
 app.get('/about', (req, res) => {
-  res.send(`
+    res.send(`
     <h1>📋 About EProcurement</h1>
     <p>This is a simple procurement management system with PostgreSQL database integration.</p>
     
@@ -75,20 +75,20 @@ app.get('/about', (req, res) => {
 
 // Step 7: Create a simple API endpoint
 app.get('/api/hello', (req, res) => {
-  res.json({
-    message: 'Hello from EProcurement API!',
-    time: new Date().toLocaleString()
-  });
+    res.json({
+        message: 'Hello from EProcurement API!',
+        time: new Date().toLocaleString()
+    });
 });
 
 // Step 8: Start the server and listen for requests
 app.listen(port, async () => {
-  console.log('🚀 Server is running!');
-  console.log(`📱 Open your browser and visit: http://localhost:${port}`);
-  console.log('⏹️  Press Ctrl+C to stop the server');
-  console.log('');
-  
-  // Test database connection on startup
-  console.log('🗄️  Testing database connection...');
-  await db.testConnection();
+    console.log('🚀 Server is running!');
+    console.log(`📱 Open your browser and visit: http://localhost:${port}`);
+    console.log('⏹️  Press Ctrl+C to stop the server');
+    console.log('');
+
+    // Test database connection on startup
+    console.log('🗄️  Testing database connection...');
+    await db.testConnection();
 });
